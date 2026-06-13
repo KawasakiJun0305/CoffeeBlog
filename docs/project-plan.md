@@ -27,13 +27,14 @@
 **目標**: Claude API でコーヒー記事の下書きを生成する
 
 ### タスク
+
 - [ ] `package.json` 初期化 + TypeScript 設定
-- [ ] `@anthropic-ai/sdk` インストール
+- [ ] `openai` パッケージインストール（GitHub Models は OpenAI SDK 互換）
 - [ ] `scripts/generate-post.ts` 作成
-  - トピックを受け取り記事を生成
+  - GitHub Models (GPT-4o) でトピックを受け取り記事を生成
   - note 投稿に適した形式（タイトル + 本文）で出力
 - [ ] `prompts/coffee-article.md` プロンプトテンプレート作成
-- [ ] `.env.example` 作成（`ANTHROPIC_API_KEY`）
+- [ ] `.env.example` 作成（`GITHUB_TOKEN`、GitHub Actions では自動提供）
 
 **完了基準**: `npm run generate` でコーヒー記事が生成される
 
@@ -44,6 +45,7 @@
 **目標**: Playwright で note.com へ自動ログイン → 下書き保存
 
 ### タスク
+
 - [ ] `playwright` インストール
 - [ ] `scripts/post-to-note.ts` 作成
   - note.com にログイン
@@ -62,6 +64,7 @@
 **目標**: 記事生成 → 下書き投稿を1コマンドで実行
 
 ### タスク
+
 - [ ] `scripts/run-pipeline.ts` 作成（generate + post を連続実行）
 - [ ] カテゴリローテーション（豆→抽出→カフェ→... を順番に）
 - [ ] エラーハンドリング・リトライ処理
@@ -76,10 +79,11 @@
 **目標**: 週次で自動的に下書き記事を生成・投稿
 
 ### タスク
+
 - [ ] `.github/workflows/generate-post.yml` 作成
   - スケジュール: 週2〜3回（月・水・金 朝9時）
   - `ubuntu-latest` ランナーで Playwright ヘッドレス実行
-  - GitHub Secrets 設定: `ANTHROPIC_API_KEY`, `NOTE_EMAIL`, `NOTE_PASSWORD`
+  - GitHub Secrets 設定: `NOTE_EMAIL`, `NOTE_PASSWORD`（GITHUB_TOKEN は自動）
 - [ ] GitHub Secrets に各種キーを登録
 - [ ] Actions のテスト実行・動作確認
 
@@ -89,12 +93,12 @@
 
 ## スケジュール概算
 
-| フェーズ | 期間 | 予定完了 |
-|----------|------|----------|
-| Phase 1 | 3〜5日 | 2026-06-18頃 |
-| Phase 2 | 3〜5日 | 2026-06-23頃 |
-| Phase 3 | 2〜3日 | 2026-06-26頃 |
-| Phase 4 | 2〜3日 | 2026-06-30頃 |
+| フェーズ | 期間   | 予定完了     |
+| -------- | ------ | ------------ |
+| Phase 1  | 3〜5日 | 2026-06-18頃 |
+| Phase 2  | 3〜5日 | 2026-06-23頃 |
+| Phase 3  | 2〜3日 | 2026-06-26頃 |
+| Phase 4  | 2〜3日 | 2026-06-30頃 |
 
 ---
 
@@ -126,13 +130,13 @@ CoffeeBlog/
 
 ## 環境・ツール
 
-| ツール | バージョン | 用途 |
-|--------|-----------|------|
-| Node.js | 20.x LTS | ランタイム |
-| TypeScript | 5.x | スクリプト |
-| `@anthropic-ai/sdk` | 最新 | Claude API クライアント |
-| `playwright` | 最新 | ブラウザ自動操作 |
-| GitHub Actions | - | 定期自動実行 |
+| ツール              | バージョン | 用途                    |
+| ------------------- | ---------- | ----------------------- |
+| Node.js             | 20.x LTS   | ランタイム              |
+| TypeScript          | 5.x        | スクリプト              |
+| `openai`            | 4.x        | GitHub Models クライアント（互換） |
+| `playwright`        | 最新       | ブラウザ自動操作        |
+| GitHub Actions      | -          | 定期自動実行            |
 
 ---
 
