@@ -24,7 +24,9 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "typecheck": "tsc --noEmit",
-    "pm": "ts-node scripts/pm-report.ts"
+    "pm": "ts-node scripts/pm-report.ts",
+    "rank": "ts-node scripts/rank-articles.ts",
+    "rank:limit": "ts-node scripts/rank-articles.ts --limit"
   },
   "dependencies": {
     "dotenv": "^16.4.0",
