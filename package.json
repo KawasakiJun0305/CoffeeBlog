@@ -1,0 +1,21 @@
+{
+  "name": "coffee-blog-pipeline",
+  "version": "1.0.0",
+  "description": "AI-powered coffee blog post generator for note.com",
+  "private": true,
+  "scripts": {
+    "generate": "ts-node scripts/generate-post.ts",
+    "post": "ts-node scripts/post-to-note.ts",
+    "pipeline": "ts-node scripts/run-pipeline.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.37.0",
+    "playwright": "^1.50.0",
+    "dotenv": "^16.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.0"
+  }
+}
