@@ -7,13 +7,18 @@
     "prepare": "git config core.hooksPath .githooks && chmod +x .githooks/pre-commit",
     "generate": "ts-node scripts/generate-post.ts",
     "generate:dry": "ts-node scripts/generate-post.ts --dry-run",
+    "matrix": "ts-node scripts/generate-from-matrix.ts",
+    "matrix:dry": "ts-node scripts/generate-from-matrix.ts --dry-run",
+    "matrix:batch": "ts-node scripts/generate-from-matrix.ts --count",
+    "matrix:status": "ts-node scripts/generate-from-matrix.ts --status",
     "post": "ts-node scripts/post-to-note.ts",
     "pipeline": "ts-node scripts/run-pipeline.ts",
     "lint": "eslint scripts/**/*.ts",
     "lint:fix": "eslint scripts/**/*.ts --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "pm": "ts-node scripts/pm-report.ts"
   },
   "dependencies": {
     "dotenv": "^16.4.0",

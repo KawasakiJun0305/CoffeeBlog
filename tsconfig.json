@@ -10,6 +10,6 @@
     "skipLibCheck": true,
     "resolveJsonModule": true
   },
-  "include": ["scripts/**/*"],
+  "include": ["scripts/**/*", "types/**/*"],
   "exclude": ["node_modules", "dist"]
 }

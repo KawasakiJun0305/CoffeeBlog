@@ -1,0 +1,48 @@
+# Gitleaks 設定 — このプロジェクト固有のシークレット検出ルール
+# ドキュメント: https://github.com/gitleaks/gitleaks
+
+title = "CoffeeBlog Gitleaks Config"
+
+# --- プロジェクト固有ルール ---
+
+[[rules]]
+id = "anthropic-api-key"
+description = "Anthropic API Key"
+regex = '''sk-ant-[A-Za-z0-9\-_]{20,}'''
+tags = ["key", "anthropic"]
+
+[[rules]]
+id = "anthropic-api-key-env-assignment"
+description = "ANTHROPIC_API_KEY への実際の値の代入"
+regex = '''(?i)ANTHROPIC_API_KEY\s*=\s*(?!your_|<|""|''|\$\{)[^\s#]{8,}'''
+tags = ["key", "anthropic", "env"]
+
+[[rules]]
+id = "note-password-assignment"
+description = "NOTE_PASSWORD への実際の値の代入"
+regex = '''(?i)NOTE_PASSWORD\s*=\s*(?!your_|<|""|''|\$\{)[^\s#]{4,}'''
+tags = ["password", "note.com"]
+
+[[rules]]
+id = "note-email-assignment"
+description = "NOTE_EMAIL への実際のメールアドレスの代入"
+regex = '''(?i)NOTE_EMAIL\s*=\s*[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}'''
+tags = ["email", "note.com"]
+
+# --- グローバル除外 ---
+
+[allowlist]
+description = "プレースホルダー・テンプレート文字列を誤検知から除外"
+# ファイル単位で丸ごと除外
+paths = [
+  '''.env\.example$''',
+  '''SECURITY\.md$''',
+  '''docs/secrets-policy\.md$''',
+  '''\.gitleaks\.toml$''',
+]
+# 特定の文字列パターンを除外（テンプレート値）
+regexes = [
+  '''your_anthropic_api_key_here''',
+  '''your_note_email@example\.com''',
+  '''your_note_password_here''',
+]
