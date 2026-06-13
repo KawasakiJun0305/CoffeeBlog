@@ -15,6 +15,8 @@
     "topics:dry": "ts-node scripts/generate-from-topics.ts --dry-run",
     "topics:batch": "ts-node scripts/generate-from-topics.ts --count",
     "topics:status": "ts-node scripts/generate-from-topics.ts --status",
+    "news": "ts-node scripts/generate-from-news.ts",
+    "news:dry": "ts-node scripts/generate-from-news.ts --dry-run",
     "post": "ts-node scripts/post-to-note.ts",
     "pipeline": "ts-node scripts/run-pipeline.ts",
     "lint": "eslint scripts/**/*.ts",

@@ -56,6 +56,30 @@
       "topic": "ハワイ コナ × フレンチプレス（健康・科学的視点）",
       "date": "2026-06-13",
       "file": "output/2026-06-13-matrix-ハワイ-コナ-フレンチプレス-健康・科学的視点.md"
+    },
+    {
+      "topic": "コーヒーと宇宙開発の意外な関係、知っていますか？",
+      "category": "コーヒー文化",
+      "date": "2026-06-13",
+      "file": "output/2026-06-13-news-コーヒーと宇宙開発の意外な関係、知っていますか？.md",
+      "generated_by": "news",
+      "inspiration": "Elon Musk becomes world's first trillionaire as SpaceX soars in stock market debut"
+    },
+    {
+      "topic": "記事",
+      "category": "時事・トレンド",
+      "date": "2026-06-13",
+      "file": "output/2026-06-13-news-記事.md",
+      "generated_by": "news",
+      "inspiration": "最新ニュース"
+    },
+    {
+      "topic": "宇宙旅行とコーヒー、エールを送るロマン",
+      "category": "コーヒー文化",
+      "date": "2026-06-13",
+      "file": "output/2026-06-13-news-宇宙旅行とコーヒー、エールを送るロマン.md",
+      "generated_by": "news",
+      "inspiration": "Elon Muskが世界初の兆ドル長者に"
     }
   ]
 }
