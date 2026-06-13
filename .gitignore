@@ -2,7 +2,10 @@ node_modules/
 dist/
 output/
 *.log
-.claude/
+.claude/*
+!.claude/skills/
+.claude/skills/*
+!.claude/skills/**/
 
 # --- Secrets & Credentials ---
 .env
