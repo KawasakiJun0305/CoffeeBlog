@@ -80,6 +80,23 @@
       "file": "output/2026-06-13-news-宇宙旅行とコーヒー、エールを送るロマン.md",
       "generated_by": "news",
       "inspiration": "Elon Muskが世界初の兆ドル長者に"
+    },
+    {
+      "bean": "小笠原諸島（国産コーヒー）",
+      "method": "ドリップバッグ（市販型）",
+      "angle": "プロのコツを自宅で再現",
+      "generated_by": "matrix",
+      "topic": "小笠原諸島（国産コーヒー） × ドリップバッグ（市販型）（プロのコツを自宅で再現）",
+      "date": "2026-06-13",
+      "file": "output/2026-06-13-matrix-小笠原諸島-国産コーヒー-ドリップバッグ-市販型-プロのコツを自宅で再現.md"
+    },
+    {
+      "topic": "記事",
+      "category": "コーヒー文化",
+      "date": "2026-06-13",
+      "file": "output/2026-06-13-news-記事.md",
+      "generated_by": "news",
+      "inspiration": "NASAが次期「アルテミス計画」チームを発表"
     }
   ]
 }
