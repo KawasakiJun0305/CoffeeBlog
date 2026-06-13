@@ -157,14 +157,17 @@ Remove-Item -Recurse playwright/.auth/ -ErrorAction SilentlyContinue
 ```
 ✅ テスト後片付け完了
 ══════════════════════════════════════════
-削除した記事ファイル : <n>件
-generated.json      : <削除 or 孤立エントリ<m>件を除去 or リセット>
+削除した記事ファイル : <n>件（output/ は git 管理外のため git-save 不要）
+generated.json      : <変更なし or 孤立エントリ<m>件を除去 or リセット>
 Playwright 成果物   : <n>件 削除 / スキップ
 ログファイル        : <n>件 削除 / スキップ
 ──────────────────────────────────────────
 作業環境はクリーンです。
 ══════════════════════════════════════════
 ```
+
+generated.json / Playwright 成果物 / ログファイルを変更した場合のみ:
+> 「変更をGitに保存しますか？ → `/git-save`」
 
 ---
 
@@ -174,4 +177,5 @@ Playwright 成果物   : <n>件 削除 / スキップ
 - `node_modules/` 内のファイルは対象外
 - `generated.json` の完全リセットは取り消せない操作なので、必ずユーザー確認を取る
 - `--all` フラグでも `generated.json` の完全リセットだけは個別確認する
-- 削除後、必要なら `/git-save` でクリーンアップをコミットすることを案内する
+- `output/` は `.gitignore` 対象のため、記事ファイル削除後に `/git-save` は不要（git に影響しない）
+- `generated.json` や Playwright 成果物を変更した場合のみ `/git-save` を案内する
